@@ -1,0 +1,418 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Pranav Nayak · Portfolio</title>
+  <meta name="description" content="Pranav Nayak: final-year Computer Science student at RV University, building computer vision and AI systems that run outside the notebook.">
+  <meta property="og:title" content="Pranav Nayak · Portfolio">
+  <meta property="og:description" content="Computer vision and AI systems, from tennis-ball tracking to a live construction-safety digital twin.">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <script>
+    try { var t = localStorage.getItem('theme'); if (t) document.documentElement.setAttribute('data-theme', t); } catch (e) {}
+  </script>
+</head>
+<body>
+  <a class="skip" href="#main">Skip to content</a>
+
+  <header class="nav" id="top">
+    <div class="nav__inner">
+      <a class="brand" href="#top" aria-label="Back to top">
+        <span class="brand__box">PN</span>
+      </a>
+      <nav aria-label="Sections">
+        <ul class="nav__links">
+          <li><a href="#about">About</a></li>
+          <li><a href="#journey">Journey</a></li>
+          <li><a href="#projects">Projects</a></li>
+          <li><a href="#research">Research</a></li>
+          <li><a href="#skills">Skills</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+      <button class="theme-toggle" id="themeToggle" type="button" aria-label="Toggle light or dark theme">
+        <svg class="icon-sun" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4.5"/><path d="M12 2v2.5M12 19.5V22M2 12h2.5M19.5 12H22M4.9 4.9l1.8 1.8M17.3 17.3l1.8 1.8M4.9 19.1l1.8-1.8M17.3 6.7l1.8-1.8"/></svg>
+        <svg class="icon-moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 14.5A8 8 0 0 1 9.5 4a8 8 0 1 0 10.5 10.5z"/></svg>
+      </button>
+    </div>
+  </header>
+
+  <main id="main">
+    <!-- ============ HERO ============ -->
+    <section class="hero">
+      <canvas class="hero__canvas" id="tracker" aria-hidden="true"></canvas>
+      <div class="hero__inner">
+        <p class="eyebrow"><span class="dot"></span> Final-year CSE · RV University, Bengaluru</p>
+        <h1 class="hero__title">Pranav Nayak</h1>
+        <p class="hero__lede">
+          I build things that <em>see</em>: computer vision and AI systems that leave the notebook and run on real footage,
+          real hardware and real users.
+        </p>
+        <div class="hero__cta">
+          <a class="btn btn--primary" href="#journey">Follow the journey</a>
+          <a class="btn" href="#projects">See projects</a>
+          <a class="btn btn--ghost" href="https://github.com/Pranav-Nayak-123" target="_blank" rel="noopener">GitHub ↗</a>
+        </div>
+        <dl class="stats">
+          <div><dt>15+</dt><dd>projects on GitHub</dd></div>
+          <div><dt>1</dt><dd>live AI system</dd></div>
+          <div><dt>1</dt><dd>paper under review</dd></div>
+          <div><dt>8.12</dt><dd>CGPA after 6 sems</dd></div>
+        </dl>
+      </div>
+      <p class="hero__caption mono" aria-hidden="true">tracking: ball #07 · yolov8 + optical flow</p>
+    </section>
+
+    <!-- ============ ABOUT ============ -->
+    <section class="section" id="about">
+      <div class="section__head reveal">
+        <p class="kicker mono">01 · About</p>
+        <h2>Systems, not notebooks</h2>
+      </div>
+      <div class="about reveal">
+        <div class="about__text">
+          <p>
+            I'm a final-year B.Tech (Hons.) Computer Science student at RV University. My first real project
+            was getting a computer to follow a tennis ball. The ball is tiny, fast and blurred, and it kept vanishing
+            behind players. Fixing that, by pairing a YOLOv8 detector with optical flow so the track survives the frames
+            the detector misses, taught me what I still care about most: making a model hold up on messy, real input.
+          </p>
+          <p>
+            Since then I've built football analytics, a Braille-teaching device with real solenoids, a pipeline that turns
+            a short story into a narrated video, and, with my team, a construction-site safety system that is live on the web.
+            I'm also first author on a paper about reconstructing 3D objects from a single image.
+          </p>
+          <p>
+            I like knowing the numbers behind a claim, writing tests that keep a system honest, and shipping something
+            people can actually open.
+          </p>
+        </div>
+        <aside class="now card" aria-labelledby="now-title">
+          <p class="kicker mono" id="now-title"><span class="dot dot--live"></span> Now · Nov 2026</p>
+          <ul class="now__list">
+            <li>Final year at RV University, graduating <strong>June 2027</strong></li>
+            <li>Improving <strong>Ground Truth</strong>, our live construction-safety system</li>
+            <li>Paper revised and resubmitted to <strong>Discover Computing</strong> (Springer Nature)</li>
+            <li>Looking for <strong>internships</strong> in ML/AI, computer vision, data science, software or IT infrastructure</li>
+          </ul>
+          <p class="now__langs mono">Speaks English · Konkani · Hindi · Kannada</p>
+        </aside>
+      </div>
+    </section>
+
+    <!-- ============ JOURNEY ============ -->
+    <section class="section" id="journey">
+      <div class="section__head reveal">
+        <p class="kicker mono">02 · Journey</p>
+        <h2>How I got here</h2>
+        <p class="section__sub">From PCMB textbooks to a system that watches construction sites. Scroll the line.</p>
+      </div>
+
+      <ol class="timeline" id="timeline">
+        <li class="timeline__progress" aria-hidden="true"><span id="timelineFill"></span></li>
+
+        <li class="tl reveal">
+          <span class="tl__node" aria-hidden="true"></span>
+          <p class="tl__date mono">2021 – 2023</p>
+          <div class="tl__body card">
+            <h3>The foundation</h3>
+            <p>Class 11 and 12 (CBSE, PCMB) at Narayana PU College, Bengaluru. Physics and maths, the base for everything later on: geometry, signals and the matrices behind 3D graphics.</p>
+          </div>
+        </li>
+
+        <li class="tl reveal">
+          <span class="tl__node" aria-hidden="true"></span>
+          <p class="tl__date mono">Aug 2023</p>
+          <div class="tl__body card">
+            <h3>Joined RV University</h3>
+            <p>Started a B.Tech (Hons.) in Computer Science. The first few semesters were Python, C, data structures and SQL, and a growing pull towards machine learning.</p>
+          </div>
+        </li>
+
+        <li class="tl reveal">
+          <span class="tl__node" aria-hidden="true"></span>
+          <p class="tl__date mono">2025 – early 2026</p>
+          <div class="tl__body card">
+            <p class="tl__chapter mono">Chapter: teaching machines to watch sport</p>
+            <h3>Tennis, then football</h3>
+            <p>Eight months on <strong>tennis ball tracking</strong>: YOLOv8 tuned for a tiny, fast object, plus optical flow to keep the track alive through blur and occlusion. Then six months on <strong>football analytics</strong>: tracking every player and the ball, and turning those tracks into possession, speed and heatmaps.</p>
+            <p>Alongside that came my first NLP project, a <strong>legal document classifier</strong> built with TF-IDF and compared classifiers.</p>
+            <ul class="tags"><li>YOLOv8</li><li>OpenCV</li><li>Optical flow</li><li>scikit-learn</li></ul>
+          </div>
+        </li>
+
+        <li class="tl reveal">
+          <span class="tl__node" aria-hidden="true"></span>
+          <p class="tl__date mono">Spring 2026</p>
+          <div class="tl__body card">
+            <p class="tl__chapter mono">Chapter: branching out</p>
+            <h3>Molecules, packets and a snake game</h3>
+            <p>Joined <strong>SafeMolGen</strong>, a team drug-discovery pipeline, owning the frontend and preprocessing a 2.85M-molecule ChEMBL corpus. In between: a real-time <strong>network traffic analyser</strong> with intrusion alerts, a Java Swing arcade game, <strong>Sssnack Attack</strong>, and <strong>Xlr8</strong>, a hospital-CEO dashboard in React and Fastify.</p>
+            <ul class="tags"><li>Data pipelines</li><li>REST APIs</li><li>Networking</li><li>Dashboards</li></ul>
+          </div>
+        </li>
+
+        <li class="tl reveal">
+          <span class="tl__node" aria-hidden="true"></span>
+          <p class="tl__date mono">Summer 2026</p>
+          <div class="tl__body card">
+            <p class="tl__chapter mono">Chapter: building for people</p>
+            <h3>Braille Tutor</h3>
+            <p>An ESP32 device that teaches Braille to visually impaired learners: a Perkins-style keyboard, a refreshable tactile cell driven by solenoids, and Read, Write and Game modes. The first time my code had to move something physical, on time.</p>
+            <ul class="tags"><li>ESP32</li><li>C/C++</li><li>Embedded</li><li>Accessibility</li></ul>
+          </div>
+        </li>
+
+        <li class="tl reveal">
+          <span class="tl__node" aria-hidden="true"></span>
+          <p class="tl__date mono">Sep 2026</p>
+          <div class="tl__body card">
+            <p class="tl__chapter mono">Chapter: shipping whole systems</p>
+            <h3>Story to video, and an app I use daily</h3>
+            <p><strong>Text-to-Video Studio</strong> turns plain prose into a narrated MP4: it finds the characters, works out who says each line, then generates scenes and voices, and it runs fully offline. I also built <strong>FitTrack</strong>, a fitness PWA that my friends and I use for gym, tennis and walks, and an <strong>India Tech Hiring</strong> analytics project on job-posting, salary and EPFO data.</p>
+            <ul class="tags"><li>Node.js</li><li>Remotion</li><li>FastAPI</li><li>React</li><li>SQL</li></ul>
+          </div>
+        </li>
+
+        <li class="tl tl--highlight reveal">
+          <span class="tl__node" aria-hidden="true"></span>
+          <p class="tl__date mono">Sep – Nov 2026</p>
+          <div class="tl__body card">
+            <p class="tl__chapter mono">Chapter: going live</p>
+            <h3>Ground Truth: construction safety from CCTV</h3>
+            <p>A team of four built an AI system that watches site footage, flags hazards against eight safety rules, and shows them in a 3D digital twin with a risk assistant. I owned the <strong>computer vision pipeline, the hazard rules and the renderer</strong>. It is live, deployed through CI/CD, and costs $0 a month to host.</p>
+            <ul class="tags"><li>YOLOE</li><li>PyTorch</li><li>Tracking</li><li>3D twin</li><li>CI/CD</li></ul>
+            <a class="link" href="https://safety-twin.onrender.com" target="_blank" rel="noopener">Open the live demo ↗</a>
+          </div>
+        </li>
+
+        <li class="tl reveal">
+          <span class="tl__node" aria-hidden="true"></span>
+          <p class="tl__date mono">Nov 2026</p>
+          <div class="tl__body card">
+            <p class="tl__chapter mono">Chapter: research and range</p>
+            <h3>First-author paper, Unity and Indian languages</h3>
+            <p>Revised and resubmitted <strong>“Lifting Pixels into Shape”</strong>, a benchmark of three deep-learning routes from a 2D image to a 3D object. I also built <strong>Atelier Car Designer</strong>, a Unity 6 car-review prototype with live transform matrices, and <strong>Dastavez</strong>, which reads and translates Indian-language documents.</p>
+            <ul class="tags"><li>3D reconstruction</li><li>Unity / C#</li><li>LLMs</li><li>RAG</li></ul>
+          </div>
+        </li>
+
+        <li class="tl tl--future reveal">
+          <span class="tl__node" aria-hidden="true"></span>
+          <p class="tl__date mono">2027 →</p>
+          <div class="tl__body card">
+            <h3>Next chapter</h3>
+            <p>Graduating in June 2027. I'm looking for a team where I can put models into production and learn from people who do it well. <a class="link" href="#contact">Let's talk.</a></p>
+          </div>
+        </li>
+      </ol>
+    </section>
+
+    <!-- ============ PROJECTS ============ -->
+    <section class="section" id="projects">
+      <div class="section__head reveal">
+        <p class="kicker mono">03 · Projects</p>
+        <h2>Things I've built</h2>
+      </div>
+
+      <div class="filters reveal" role="toolbar" aria-label="Filter projects">
+        <button class="chip is-active" data-filter="all" type="button">All</button>
+        <button class="chip" data-filter="cv" type="button">Computer vision</button>
+        <button class="chip" data-filter="ai" type="button">AI &amp; NLP</button>
+        <button class="chip" data-filter="web" type="button">Web &amp; data</button>
+        <button class="chip" data-filter="hw" type="button">Hardware &amp; graphics</button>
+      </div>
+
+      <div class="grid" id="projectGrid">
+        <article class="project project--feature card reveal" data-cat="cv ai web">
+          <div class="project__top">
+            <span class="badge badge--live"><span class="dot dot--live"></span> Live</span>
+            <span class="mono project__meta">Team of 4 · CS3235</span>
+          </div>
+          <h3>Ground Truth: Construction Safety Twin</h3>
+          <p>Turns site CCTV into safety evidence: detection and tracking, eight hazard rules (PPE, zones, machinery, edges, worker down, suspended loads, fire and smoke), an interactive 3D digital twin, a 5×5 risk register, and a risk assistant that checks every claim against the run's facts.</p>
+          <p class="project__role"><strong>My part:</strong> the CV pipeline (YOLOE-26l, tracking, PPE classifier, camera calibration), hazard rules R1–R5 and the video renderer.</p>
+          <ul class="figures">
+            <li><b>0.989</b><span>person AP50 on held-out data</span></li>
+            <li><b>0.39 → 0.85</b><span>missing-helmet recall on unseen images</span></li>
+            <li><b>$0</b><span>per month to host</span></li>
+          </ul>
+          <ul class="tags"><li>PyTorch</li><li>YOLOE</li><li>OpenCV</li><li>Gemini</li><li>Supabase</li><li>Render</li></ul>
+          <div class="project__links">
+            <a href="https://safety-twin.onrender.com" target="_blank" rel="noopener">Live demo ↗</a>
+            <a href="https://github.com/Pranav-Nayak-123/construction-safety-twin" target="_blank" rel="noopener">Code ↗</a>
+          </div>
+        </article>
+
+        <article class="project card reveal" data-cat="ai web">
+          <div class="project__top"><span class="badge">Ongoing</span><span class="mono project__meta">Solo</span></div>
+          <h3>Text-to-Video Studio</h3>
+          <p>Paste a story and get a narrated video. A six-stage pipeline works out the cast, scenes and dialogue (including who speaks each quoted line), then generates visuals, music and voices and renders an MP4. It runs offline with no API keys, and a verifier checks that every word on screen comes from the story.</p>
+          <ul class="tags"><li>Node.js</li><li>Remotion</li><li>ffmpeg</li><li>NLP</li><li>TTS</li></ul>
+          <div class="project__links"><a href="https://github.com/Pranav-Nayak-123/text-to-video-studio" target="_blank" rel="noopener">Code ↗</a></div>
+        </article>
+
+        <article class="project card reveal" data-cat="cv">
+          <div class="project__top"><span class="badge">8 months</span><span class="mono project__meta">Solo</span></div>
+          <h3>Tennis Ball Tracking</h3>
+          <p>Tracks the ball through full match footage. A YOLOv8 detector is tuned for a small, fast object, and optical flow carries the track through motion blur and occlusion. On top of that: trajectory reconstruction, ball speed, shot classification, a mini-court projection and highlight generation.</p>
+          <ul class="tags"><li>YOLOv8</li><li>OpenCV</li><li>Optical flow</li></ul>
+          <div class="project__links"><a href="https://github.com/Pranav-Nayak-123/Tennis_ML_Project" target="_blank" rel="noopener">Code ↗</a></div>
+        </article>
+
+        <article class="project card reveal" data-cat="cv">
+          <div class="project__top"><span class="badge">6 months</span><span class="mono project__meta">Solo</span></div>
+          <h3>Football Analytics</h3>
+          <p>Detects and tracks every player and the ball, keeping identities through crowded penalty-box scenes. Turns the tracks into possession per player and team, speed estimates, mini-map overlays, formations and heatmaps.</p>
+          <ul class="tags"><li>YOLOv8</li><li>Tracking</li><li>OpenCV</li></ul>
+          <div class="project__links"><a href="https://github.com/Pranav-Nayak-123/football-analysis" target="_blank" rel="noopener">Code ↗</a></div>
+        </article>
+
+        <article class="project card reveal" data-cat="hw">
+          <div class="project__top"><span class="badge">5 months</span><span class="mono project__meta">Hardware</span></div>
+          <h3>Braille Tutor</h3>
+          <p>An assistive device that teaches Braille: an ESP32 Perkins-style keyboard, a solenoid-driven tactile Braille cell and an LCD for a sighted helper. It has three modes: Read the raised character, Write it back, and a timed word Game.</p>
+          <ul class="tags"><li>ESP32</li><li>Arduino</li><li>C/C++</li></ul>
+          <div class="project__links"><a href="https://github.com/Pranav-Nayak-123/Braille-Tutor" target="_blank" rel="noopener">Code ↗</a></div>
+        </article>
+
+        <article class="project card reveal" data-cat="ai web">
+          <div class="project__top"><span class="badge">4 months</span><span class="mono project__meta">Team · frontend &amp; data</span></div>
+          <h3>SafeMolGen-DrugOracle</h3>
+          <p>A closed-loop drug-discovery pipeline (GNN, cascaded NN, Transformer and RL) that proposes drug-like molecules and predicts their clinical-trial survival. I built the frontend (molecule views, 22-property ADMET safety breakdowns, trial-probability scores) and cleaned the 2.85M-molecule ChEMBL training corpus.</p>
+          <ul class="tags"><li>Python</li><li>Tailwind</li><li>REST</li><li>ChEMBL</li></ul>
+          <div class="project__links"><a href="https://github.com/D-SreeVardhan/SafeMolGen" target="_blank" rel="noopener">Code ↗</a></div>
+        </article>
+
+        <article class="project card reveal" data-cat="web">
+          <div class="project__top"><span class="badge">Analytics</span><span class="mono project__meta">Solo</span></div>
+          <h3>India Tech Hiring Intelligence</h3>
+          <p>Where should a Bengaluru staffing team focus? Dashboards built on Naukri job postings, Glassdoor India salaries and EPFO formal-job data, fed by a tested Python and SQL pipeline.</p>
+          <ul class="tags"><li>Python</li><li>SQL</li><li>Zoho Analytics</li></ul>
+          <div class="project__links"><a href="https://github.com/Pranav-Nayak-123/india-tech-hiring-intelligence" target="_blank" rel="noopener">Code ↗</a></div>
+        </article>
+
+        <article class="project card reveal" data-cat="hw">
+          <div class="project__top"><span class="badge">CG &amp; VR</span><span class="mono project__meta">Solo</span></div>
+          <h3>Atelier Car Designer</h3>
+          <p>A Unity 6 URP prototype for reviewing a car at full scale. You can move, rotate and scale each part while a live 4×4 composite matrix updates, all set on a rooftop city garage at dusk. It runs at over 400 FPS.</p>
+          <ul class="tags"><li>Unity 6</li><li>C#</li><li>URP</li><li>Transforms</li></ul>
+          <div class="project__links"><a href="https://github.com/Pranav-Nayak-123/CaseStudy_1RVU23CSE344" target="_blank" rel="noopener">Code ↗</a></div>
+        </article>
+
+        <article class="project card reveal" data-cat="ai">
+          <div class="project__top"><span class="badge">LLMs</span><span class="mono project__meta">Mini-project</span></div>
+          <h3>Dastavez</h3>
+          <p>Reads, extracts from, summarises, translates and answers questions about Indian-language documents using Indian AI models (Sarvam AI).</p>
+          <ul class="tags"><li>Python</li><li>Sarvam AI</li><li>Document AI</li></ul>
+          <div class="project__links"><a href="https://github.com/Pranav-Nayak-123/dastavez-indian-document-understanding" target="_blank" rel="noopener">Code ↗</a></div>
+        </article>
+
+        <article class="project card reveal" data-cat="web">
+          <div class="project__top"><span class="badge">Daily use</span><span class="mono project__meta">Private repo</span></div>
+          <h3>FitTrack</h3>
+          <p>A fitness PWA for body weight, gym workouts, tennis and walking. It has accounts, so friends get their own data, and an offline queue so a workout logged with no signal still saves.</p>
+          <ul class="tags"><li>FastAPI</li><li>React</li><li>TypeScript</li><li>Postgres</li><li>PWA</li></ul>
+        </article>
+      </div>
+
+      <details class="more reveal">
+        <summary>More from the archive</summary>
+        <ul class="more__list">
+          <li><a href="https://github.com/Pranav-Nayak-123/legal-classifier-genai" target="_blank" rel="noopener">Legal Document Classifier</a><span>NLP pipeline, TF-IDF and compared classifiers</span></li>
+          <li><a href="https://github.com/Pranav-Nayak-123/Network_Security_Project" target="_blank" rel="noopener">Network Traffic Analyser</a><span>Real-time capture, intrusion detection, visual reports</span></li>
+          <li><a href="https://github.com/Pranav-Nayak-123/Xlr8" target="_blank" rel="noopener">Xlr8</a><span>Hospital-CEO dashboard · React, Fastify, D3</span></li>
+          <li><a href="https://github.com/Pranav-Nayak-123/sssnack-attack" target="_blank" rel="noopener">Sssnack Attack</a><span>Java Swing arcade game, multiplayer and ghost replay</span></li>
+          <li><a href="https://github.com/Pranav-Nayak-123/CGVR" target="_blank" rel="noopener">CG &amp; VR Labs</a><span>OpenGL rasterisation to Unity scenes</span></li>
+          <li><a href="https://github.com/Pranav-Nayak-123/AAI_primer_LabWWLLM" target="_blank" rel="noopener">Agentic AI Primer</a><span>LLM and agent lab notebooks</span></li>
+        </ul>
+      </details>
+    </section>
+
+    <!-- ============ RESEARCH ============ -->
+    <section class="section" id="research">
+      <div class="section__head reveal">
+        <p class="kicker mono">04 · Research</p>
+        <h2>Publication</h2>
+      </div>
+      <article class="paper card reveal">
+        <div class="paper__art" aria-hidden="true">
+          <svg viewBox="0 0 120 120">
+            <rect x="14" y="30" width="44" height="44" rx="3" class="p-flat"/>
+            <path d="M64 52h18" class="p-arrow"/><path d="M78 47l5 5-5 5" class="p-arrow"/>
+            <path d="M88 40l16-9 0 30-16 9z" class="p-cube p-cube--side"/>
+            <path d="M72 31l16 9 0 30-16-9z" class="p-cube"/>
+            <path d="M72 31l16-9 16 9-16 9z" class="p-cube p-cube--top"/>
+          </svg>
+        </div>
+        <div>
+          <span class="badge">Under review · Springer Nature</span>
+          <h3>Lifting Pixels into Shape: Three Deep Routes from 2D Images to 3D Objects</h3>
+          <p class="paper__authors"><strong>Pranav Nayak</strong>, M. Dipesh Kumar, Pavan Kumar K. N., Nithin H., Jeethu V. Devasia</p>
+          <p>Single-image 3D reconstruction, compared across three deep-learning approaches and benchmarked on <strong>Pix3D</strong> under one explicit, leakage-free protocol, so the comparison is fair. Revised manuscript resubmitted to <em>Discover Computing</em>.</p>
+        </div>
+      </article>
+    </section>
+
+    <!-- ============ SKILLS ============ -->
+    <section class="section" id="skills">
+      <div class="section__head reveal">
+        <p class="kicker mono">05 · Toolkit</p>
+        <h2>Skills &amp; certifications</h2>
+      </div>
+      <div class="skills reveal">
+        <div class="card skill">
+          <h3>Languages</h3>
+          <ul class="tags"><li>Python</li><li>C</li><li>SQL</li></ul>
+        </div>
+        <div class="card skill">
+          <h3>ML &amp; vision</h3>
+          <ul class="tags"><li>PyTorch</li><li>YOLOv8 / YOLOE</li><li>OpenCV</li><li>Optical flow</li><li>scikit-learn</li><li>TensorFlow (basic)</li><li>3D reconstruction</li></ul>
+        </div>
+        <div class="card skill">
+          <h3>NLP &amp; LLMs</h3>
+          <ul class="tags"><li>LangChain</li><li>RAG</li><li>BERT</li><li>TF-IDF</li><li>Prompt engineering</li><li>Text-to-speech</li></ul>
+        </div>
+        <div class="card skill">
+          <h3>Build &amp; ship</h3>
+          <ul class="tags"><li>FastAPI</li><li>Node.js</li><li>Remotion</li><li>ffmpeg</li><li>HTML/CSS</li><li>Tailwind</li><li>Git &amp; CI/CD</li><li>Unity</li><li>ESP32</li></ul>
+        </div>
+        <div class="card skill skill--wide">
+          <h3>Certifications</h3>
+          <ul class="certs">
+            <li><b>Agentic AI</b><span>DeepLearning.AI</span></li>
+            <li><b>Transformer Models &amp; BERT</b><span>Google Cloud</span></li>
+            <li><b>Affective Computing</b><span>NPTEL</span></li>
+            <li><b>Programming in Modern C++</b><span>NPTEL</span></li>
+            <li><b>Design &amp; Implementation of HCI</b><span>NPTEL</span></li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ CONTACT ============ -->
+    <section class="section contact" id="contact">
+      <div class="contact__box card reveal">
+        <p class="kicker mono">06 · Contact</p>
+        <h2>Let's build something that holds up.</h2>
+        <p>I'm open to internships and graduate roles from 2027. The fastest way to reach me is a LinkedIn message.</p>
+        <div class="hero__cta">
+          <a class="btn btn--primary" href="https://www.linkedin.com/in/pranav-nayak-93031028b" target="_blank" rel="noopener">Message me on LinkedIn ↗</a>
+          <a class="btn" href="https://github.com/Pranav-Nayak-123" target="_blank" rel="noopener">GitHub ↗</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <p class="mono">© <span id="year">2026</span> Pranav Nayak · Bengaluru</p>
+    <a class="mono" href="#top">Back to top ↑</a>
+  </footer>
+
+  <script src="main.js"></script>
+</body>
+</html>
