@@ -324,6 +324,11 @@ strong, b { font-weight: 600; }
 .contact__box { padding: clamp(28px, 6vw, 56px); text-align: left; background:
   radial-gradient(600px 240px at 100% 0%, var(--accent-soft), transparent 70%), var(--surface); }
 .contact__box p { color: var(--muted); max-width: 52ch; margin-top: 12px; }
+.contact__list { list-style: none; padding: 0; margin: 20px 0 0; display: grid; gap: 8px; max-width: 520px; }
+.contact__list li { display: grid; grid-template-columns: 90px 1fr; gap: 12px; align-items: baseline; padding: 10px 0; border-bottom: 1px dashed var(--border); }
+.contact__list .mono { font-size: .75rem; color: var(--muted); text-transform: uppercase; letter-spacing: .06em; }
+.contact__list a { color: var(--text); text-decoration: none; font-weight: 500; overflow-wrap: anywhere; }
+.contact__list a:hover { color: var(--accent); }
 .footer { max-width: var(--max); margin: 0 auto; padding: 24px 16px 40px; display: flex; justify-content: space-between; gap: 12px; flex-wrap: wrap; border-top: 1px solid var(--border); }
 .footer p, .footer a { margin: 0; font-size: .78rem; color: var(--muted); text-decoration: none; }
 .footer a:hover { color: var(--accent); }
@@ -358,6 +363,7 @@ strong, b { font-weight: 600; }
   .skills { grid-template-columns: 1fr; }
   .section { padding-top: 72px; }
   .hero__caption, .hero__canvas { display: none; }
+  .contact__list li { grid-template-columns: 1fr; gap: 2px; }
   .nav nav { mask-image: linear-gradient(to right, #000 85%, transparent); -webkit-mask-image: linear-gradient(to right, #000 85%, transparent); }
 
   .timeline__progress { left: 7px; }
