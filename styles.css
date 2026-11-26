@@ -343,6 +343,22 @@ strong, b { font-weight: 600; }
 .contact__list .mono { font-size: .75rem; color: var(--muted); text-transform: uppercase; letter-spacing: .06em; }
 .contact__list a { color: var(--text); text-decoration: none; font-weight: 500; overflow-wrap: anywhere; }
 .contact__list a:hover { color: var(--accent); }
+.contact__email { display: flex; flex-wrap: wrap; align-items: baseline; gap: 6px 12px; }
+.copy-btn {
+  font: 500 .72rem var(--font-mono); cursor: pointer;
+  padding: 3px 9px; border-radius: 6px;
+  border: 1px solid var(--border); background: var(--bg-2); color: var(--muted);
+}
+.copy-btn:hover { color: var(--text); border-color: var(--accent); }
+.toast {
+  position: fixed; left: 50%; bottom: 24px; z-index: 200;
+  transform: translate(-50%, 20px); opacity: 0; pointer-events: none;
+  max-width: calc(100% - 32px); width: max-content;
+  background: var(--text); color: var(--bg);
+  padding: 11px 16px; border-radius: 10px; font-size: .9rem; box-shadow: var(--shadow);
+  transition: opacity .25s, transform .25s;
+}
+.toast.is-on { opacity: 1; transform: translate(-50%, 0); }
 .footer { max-width: var(--max); margin: 0 auto; padding: 24px 16px 40px; display: flex; justify-content: space-between; gap: 12px; flex-wrap: wrap; border-top: 1px solid var(--border); }
 .footer p, .footer a { margin: 0; font-size: .78rem; color: var(--muted); text-decoration: none; }
 .footer a:hover { color: var(--accent); }

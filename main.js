@@ -83,6 +83,53 @@
     });
   });
 
+  /* ---------- Email: copy as a fallback ----------
+     mailto: does nothing on devices with no mail app set up, so every email
+     click also copies the address and says so. */
+  var EMAIL = 'pranav.nayak2005@gmail.com';
+  var toast = document.getElementById('toast');
+  var toastTimer = 0;
+  function showToast(msg) {
+    if (!toast) return;
+    toast.textContent = msg;
+    toast.classList.add('is-on');
+    clearTimeout(toastTimer);
+    toastTimer = setTimeout(function () { toast.classList.remove('is-on'); }, 3200);
+  }
+  function copyText(text) {
+    if (navigator.clipboard && window.isSecureContext) {
+      return navigator.clipboard.writeText(text).then(function () { return true; }, function () { return legacyCopy(text); });
+    }
+    return Promise.resolve(legacyCopy(text));
+  }
+  function legacyCopy(text) {
+    try {
+      var ta = document.createElement('textarea');
+      ta.value = text; ta.setAttribute('readonly', '');
+      ta.style.position = 'fixed'; ta.style.opacity = '0';
+      document.body.appendChild(ta); ta.select();
+      var ok = document.execCommand('copy');
+      document.body.removeChild(ta);
+      return ok;
+    } catch (e) { return false; }
+  }
+  document.querySelectorAll('[data-copy-email]').forEach(function (a) {
+    a.addEventListener('click', function () {
+      // let the mailto open normally; copy alongside it
+      copyText(EMAIL).then(function (ok) {
+        showToast(ok ? 'Email copied: ' + EMAIL + '. Paste it into any mail app.' : 'My email: ' + EMAIL);
+      });
+    });
+  });
+  document.querySelectorAll('.copy-btn').forEach(function (btn) {
+    btn.addEventListener('click', function () {
+      copyText(btn.getAttribute('data-copy')).then(function (ok) {
+        showToast(ok ? 'Copied ' + btn.getAttribute('data-copy') : 'Could not copy. Select the address instead.');
+        if (ok) { btn.textContent = 'Copied ✓'; setTimeout(function () { btn.textContent = 'Copy'; }, 2000); }
+      });
+    });
+  });
+
   /* ---------- Hero: a tracked ball ----------
      A ball bounces across the hero. A detection box follows it; while the ball
      passes behind the "occluder" the box goes dashed and is carried by optical

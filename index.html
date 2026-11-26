@@ -161,9 +161,9 @@
           <p class="tl__date mono">Spring 2026</p>
           <div class="tl__body card">
             <p class="tl__chapter mono">Chapter: branching out</p>
-            <h3>Packets, dashboards and a snake game</h3>
-            <p>A real-time <strong>network traffic analyser</strong> with intrusion alerts, a Java Swing arcade game called <strong>Sssnack Attack</strong> with multiplayer and ghost replay, and <strong>Xlr8</strong>, a hospital-CEO dashboard built with React and Fastify. Three very different problems in one semester.</p>
-            <ul class="tags"><li>Networking</li><li>Java Swing</li><li>React</li><li>Dashboards</li></ul>
+            <h3>Molecules, packets and a snake game</h3>
+            <p>Joined <strong>SafeMolGen</strong>, a team drug-discovery pipeline, building its frontend and cleaning a 2.85M-molecule ChEMBL corpus. Alongside it came a real-time <strong>network traffic analyser</strong> with intrusion alerts, a Java Swing arcade game called <strong>Sssnack Attack</strong>, and <strong>Xlr8</strong>, a hospital-CEO dashboard built with React and Fastify.</p>
+            <ul class="tags"><li>Data pipelines</li><li>Networking</li><li>Java Swing</li><li>Dashboards</li></ul>
           </div>
         </li>
 
@@ -291,6 +291,15 @@
           <div class="project__links"><a href="https://github.com/Pranav-Nayak-123/Braille-Tutor" target="_blank" rel="noopener">Code ↗</a></div>
         </article>
 
+        <article class="project card reveal" data-cat="ai web">
+          <div class="project__top"><span class="badge">4 months</span><span class="mono project__meta">Team · frontend &amp; data</span></div>
+          <h3>SafeMolGen-DrugOracle</h3>
+          <p>A closed-loop drug-discovery pipeline (GNN, cascaded NN, Transformer and RL) that proposes drug-like molecules and predicts their clinical-trial survival.</p>
+          <p class="project__role"><strong>My part:</strong> the frontend (molecule views, 22-property ADMET safety breakdowns, trial-probability scores, wired to the FastAPI backend) and cleaning the 2.85M-molecule ChEMBL training corpus.</p>
+          <ul class="tags"><li>Python</li><li>Tailwind</li><li>REST APIs</li><li>ChEMBL</li></ul>
+          <div class="project__links"><a href="https://github.com/D-SreeVardhan/SafeMolGen" target="_blank" rel="noopener">Code ↗</a></div>
+        </article>
+
         <article class="project card reveal" data-cat="web">
           <div class="project__top"><span class="badge">Security</span><span class="mono project__meta">Solo</span></div>
           <h3>Network Traffic Analyser</h3>
@@ -411,12 +420,13 @@
         <h2>Let's build something that holds up.</h2>
         <p>I'm open to internships and graduate roles from 2027. Email is the fastest way to reach me.</p>
         <ul class="contact__list">
-          <li><span class="mono">Email</span><a href="mailto:pranav.nayak2005@gmail.com">pranav.nayak2005@gmail.com</a></li>
+          <li><span class="mono">Email</span><span class="contact__email"><a href="mailto:pranav.nayak2005@gmail.com" data-copy-email>pranav.nayak2005@gmail.com</a><button class="copy-btn" type="button" data-copy="pranav.nayak2005@gmail.com">Copy</button></span></li>
           <li><span class="mono">Phone</span><a href="tel:+919902394977">+91 99023 94977</a></li>
           <li><span class="mono">Based in</span><span>Bengaluru, India</span></li>
         </ul>
         <div class="hero__cta">
-          <a class="btn btn--primary" href="mailto:pranav.nayak2005@gmail.com">Email me</a>
+          <a class="btn btn--primary" href="mailto:pranav.nayak2005@gmail.com" data-copy-email>Email me</a>
+          <a class="btn" href="https://mail.google.com/mail/?view=cm&amp;fs=1&amp;to=pranav.nayak2005@gmail.com" target="_blank" rel="noopener">Open in Gmail ↗</a>
           <a class="btn" href="Pranav_Nayak_Resume.pdf" target="_blank" rel="noopener">Download resume ↓</a>
           <a class="btn" href="https://www.linkedin.com/in/pranav-nayak-93031028b" target="_blank" rel="noopener">LinkedIn ↗</a>
           <a class="btn" href="https://github.com/Pranav-Nayak-123" target="_blank" rel="noopener">GitHub ↗</a>
@@ -430,6 +440,7 @@
     <a class="mono" href="#top">Back to top ↑</a>
   </footer>
 
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
   <script src="main.js"></script>
 </body>
 </html>
