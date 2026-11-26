@@ -201,7 +201,21 @@ strong, b { font-weight: 600; }
 /* About */
 .about { display: grid; grid-template-columns: 1.5fr 1fr; gap: 36px; align-items: start; }
 .about__text p { font-size: 1.06rem; }
-.now { padding: 22px 22px 18px; position: sticky; top: 90px; }
+.about__side { position: sticky; top: 90px; display: grid; gap: 22px; }
+.now { padding: 22px 22px 18px; }
+.portrait { margin: 10px 0 0 8px; position: relative; width: 100%; max-width: 250px; }
+.portrait img {
+  display: block; width: 100%; height: auto; aspect-ratio: 4 / 5; object-fit: cover;
+  border-radius: 6px; box-shadow: var(--shadow);
+}
+.portrait::after { /* detection box around the photo */
+  content: ""; position: absolute; inset: -8px; border: 1.5px solid var(--accent); border-radius: 4px; pointer-events: none;
+}
+.portrait__tag {
+  position: absolute; top: -25px; left: -8px;
+  background: var(--accent); color: var(--accent-ink);
+  font-size: .7rem; font-weight: 500; padding: 2px 8px; border-radius: 3px 3px 0 0;
+}
 .now__list { list-style: none; padding: 0; margin: 0 0 14px; }
 .now__list li { padding: 9px 0 9px 22px; border-bottom: 1px dashed var(--border); position: relative; font-size: .96rem; line-height: 1.5; }
 .now__list li:last-child { border-bottom: 0; }
@@ -350,7 +364,8 @@ strong, b { font-weight: 600; }
   .grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .skills { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .about { grid-template-columns: 1fr; }
-  .now { position: static; }
+  .about__side { position: static; grid-template-columns: auto 1fr; align-items: start; gap: 32px; }
+  .portrait { width: 200px; margin-top: 26px; }
 }
 @media (max-width: 720px) {
   .nav__links a { padding: 6px 8px; font-size: .86rem; }
@@ -364,6 +379,8 @@ strong, b { font-weight: 600; }
   .section { padding-top: 72px; }
   .hero__caption, .hero__canvas { display: none; }
   .contact__list li { grid-template-columns: 1fr; gap: 2px; }
+  .about__side { grid-template-columns: 1fr; }
+  .portrait { width: 70%; max-width: 240px; }
   .nav nav { mask-image: linear-gradient(to right, #000 85%, transparent); -webkit-mask-image: linear-gradient(to right, #000 85%, transparent); }
 
   .timeline__progress { left: 7px; }
